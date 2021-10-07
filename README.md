@@ -11,4 +11,4 @@ Users will be able to:
 
 Wireframe
 https://wireframe.cc/ETwvM4
-![image](https://user-images.githubusercontent.com/39417343/136477520-59ff1e76-35bc-42d5-867d-df52517a5848.png)
+![image](https://user-images.githubusercontent.com/39417343/136477667-0c77b66b-95a6-420c-9d10-5c1e768c3d5a.png)

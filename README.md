@@ -25,3 +25,8 @@ https://wireframe.cc/ETwvM4
 * `npm` to manage project dependencies
 
 ## Implementation Timeline
+* Friday & Weekend: Setup project. Create classes and render general stucture.
+* Monday: Implement `D3.js` to create and color World map.
+* Tuesday: Continue implementing `D3.js` to present country data.
+* Wednesday: Ensure all sections work together and put finishing touches.
+* Thursday Morning: Deploy to Github Pages.

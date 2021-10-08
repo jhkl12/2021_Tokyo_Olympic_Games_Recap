@@ -22,6 +22,6 @@ https://wireframe.cc/ETwvM4
 * `Javascript,CSS,HTML` to build project structure
 * `D3.js` to display world map and data
 * `Webpack` to bundle the source JavaScript code
-*`npm` to manage project dependencies
+* `npm` to manage project dependencies
 
 ## Implementation Timeline

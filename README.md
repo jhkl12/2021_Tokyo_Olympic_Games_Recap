@@ -6,13 +6,13 @@ This project is a data visualization of the Olympic medals won around the world 
 
 ## Functionality & MVPs
 Users will be able to:
--distinguish the highest medal earning countries without mouse movement
--hover over countries to display the models won.
--click on countries to display a detailed breakdown of medals, athletes, and events
+* distinguish the highest medal earning countries without mouse movement
+* hover over countries to display the models won.
+* click on countries to display a detailed breakdown of medals, athletes, and events
 
 In addition, this project will include:
--links to LinkedIn,Github, and personal site
--A production README
+* links to LinkedIn,Github, and personal site
+* A production README
 
 ## Wireframe
 https://wireframe.cc/ETwvM4

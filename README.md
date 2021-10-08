@@ -16,7 +16,7 @@ In addition, this project will include:
 
 ## Wireframe
 https://wireframe.cc/ETwvM4
-![image](https://user-images.githubusercontent.com/39417343/136477667-0c77b66b-95a6-420c-9d10-5c1e768c3d5a.png)
+![image](https://user-images.githubusercontent.com/39417343/136479988-fdb2a561-df78-4b50-b143-218b8f879eab.png)
 
 ## Technologies, Libraries, APIs
 * `Javascript,CSS,HTML` to build project structure

@@ -15,14 +15,16 @@
   <div class="flex-container">
     <h1 id="header"> Message to be replaced </h1>
     <div class="map-and-data-container">
-      <div class="data">Data</div>
-      <div class="map">Map</div>
+      <!-- potentially use Runtime.js to display world map -->
+      <div class="data">Data
+        <!-- use <path> tag to trace out countries -->
+      </div>
+      <div class="map">Map
+        <div id="hover-info"></div>
+        <svg class="worldmap"></svg>
+      </div>
     </div>
   </div>
-  <!-- <script>
-    d3.select('h1').style('color','darkblue');
-    
-  </script> -->
 </body>
 
 </html>

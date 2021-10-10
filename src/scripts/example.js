@@ -6,6 +6,9 @@ class Example {
       this.handleClick = this.handleClick.bind(this)
       this.ele.addEventListener("click", this.handleClick)
       d3.select('h1').style('color','darkblue');
+      
+
+
   }
   
   handleClick(){

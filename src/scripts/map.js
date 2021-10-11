@@ -1,3 +1,5 @@
+import Data from "./data";
+
 const d3 = require("d3");
 const topojson = require("topojson-client")
 
@@ -7,14 +9,14 @@ const topojson = require("topojson-client")
 
 class Map {
   constructor() {
-      const width = 900;
-      const height = 600;
+      const width = 1000;
+      const height = 700;
       
       const svg = d3.select("svg").attr("width", width).attr("height", height);
       //creates latitude and longitude lines
       const projection = d3
       .geoMercator()
-      .scale(140)
+      .scale(170)
       .translate([width / 2, height / 1.4]);
       const path = d3.geoPath(projection);
       
@@ -28,19 +30,19 @@ class Map {
           .enter()
           .append("path")
           .attr("class", "country")
-          //   .attr("id", countries.features[i].properties.name)
           .attr("id", d => {
               return d.properties.name;
             })
             .attr("d", path)
             .on("mouseover", e => {
                 const name = e.target.__data__.properties.name
-                const domEle = document.getElementById("hover-info");
-                domEle.innerHTML = name; 
+                Data.countryStats(name,e)
+                // const domEle = document.getElementById("hover-info");
+                // domEle.innerHTML = name; 
                 // console.log(name);
             })
-            // .attr("fill")
-            i += 1;
+            // .attr("fill", d => color(data.get(d.properties.name)))
+
         });
     }
     

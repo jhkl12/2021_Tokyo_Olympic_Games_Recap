@@ -1,4 +1,4 @@
-
+import medalData from "./medals";
 const d3 = require("d3");
 
 class Data {
@@ -14,18 +14,28 @@ class Data {
                 domEle.innerHTML = `${country} => Gold:0, Silver:0, Bronze:0` 
             }
         })
-
     }
     static countries = (country) => {
-        let countries = []
+        let countries = [];
+        
         d3.json("data/Medals.json", function(data){
             countries.push(data)
             console.log(data)
         })
+        
         console.log(countries);
     }
-    static color = (country,e) => {
+    static color = (country) => {
         // min opacity = most medals, divide by medals 
+        let countries = medalData;
+        let opacity = 0;
+        let maxMedalCount = 113;
+        if (countries[country]){
+                  return countries[country].Total/maxMedalCount
+        } else {
+            return 0
+        }
+
     }
     static update = (country,e) => {
         console.log("clicked");

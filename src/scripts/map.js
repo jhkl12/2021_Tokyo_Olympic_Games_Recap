@@ -1,7 +1,7 @@
 import Data from "./data";
-
 const d3 = require("d3");
 const topojson = require("topojson-client");
+
 
 // TODO
 // add color fill to map with medal data
@@ -21,7 +21,6 @@ class Map {
     const path = d3.geoPath(projection);
 
     const g = svg.append("g");
-    let i = 0;
     d3.json("data/countries-50m (1).json").then((data) => {
       const countries = topojson.feature(data, data.objects.countries);
 
@@ -33,11 +32,11 @@ class Map {
         .attr("id", (d) => {
           return d.properties.name;
         })
-        .attr("fill", (d) => {
-            //create a Data.color function to translate medals won to color gradient
+        .attr("stroke","gray")
+        .attr("fill", "blue")
+        .attr("fill-opacity", (d) => {
             const name = d.properties.name;
-            Data.color(name);
-            debugger
+            return Data.color(name);
         })
         .attr("d", path)
         .on("mouseover", (e) => {
@@ -54,7 +53,7 @@ class Map {
           // and input country name to function to update info
           Data.update();
         })
-      // .attr("fill", d => color(data.get(d.properties.name)))
+        Data.color('Russia')
     });
   }
 }

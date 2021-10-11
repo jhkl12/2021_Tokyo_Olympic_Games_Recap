@@ -1,4 +1,5 @@
-{
+
+const medalData = {
    "United States of America": {
       "Rank": 1,
       "Gold": 39,
@@ -744,3 +745,4 @@
       "Rank by Total": 77
    }
 }
+export default medalData;

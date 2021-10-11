@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const main = document.getElementById("header");
     const map = new Map();
     // const data = new Data();
-    // Data.countries();
-    let countries = []
+
     d3.json("data/Medals.json").then((data) => {
         
         console.log(data)

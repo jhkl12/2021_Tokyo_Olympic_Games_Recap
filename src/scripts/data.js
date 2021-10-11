@@ -3,7 +3,7 @@ const d3 = require("d3");
 
 class Data {
     constructor (country){
-        d3.json("data/Medals.json")
+        
     }
     static countryStats = (country,e) => {
         d3.json("data/Medals.json").then((data) => {
@@ -12,7 +12,6 @@ class Data {
                 domEle.innerHTML = `${country} => Gold:${data[country].Gold}, Silver:${data[country].Silver}, Bronze:${data[country].Bronze}` 
             } else {
                 domEle.innerHTML = `${country} => Gold:0, Silver:0, Bronze:0` 
-
             }
         })
 
@@ -24,6 +23,12 @@ class Data {
             console.log(data)
         })
         console.log(countries);
+    }
+    static color = (country,e) => {
+        // min opacity = most medals, divide by medals 
+    }
+    static update = (country,e) => {
+        console.log("clicked");
     }
 }
 

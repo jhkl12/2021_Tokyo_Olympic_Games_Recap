@@ -2,18 +2,34 @@ import Data from "./data";
 const d3 = require("d3");
 const topojson = require("topojson-client");
 
-
 // TODO
-// add color fill to map with medal data
 // create hover popup when hovering over country
+// create legend
+// import athletes on click
+
 
 class Map {
   constructor() {
-    const width = 1000;
+    d3.select("body")
+    .append("div")
+    .attr("id", "tooltip")
+    .style("text-align","left")
+    .style("padding",16+"px")
+    .style("background-color","lightsalmon")
+    .style("border","1px","solid","black")
+    .style("width","auto")
+    .style("opacity",0)
+    .style("color","black")
+    .style("position","absolute")
+    // creating map
+    const width = 1100;
     const height = 700;
 
-    const svg = d3.select("svg").attr("width", width).attr("height", height);
-    //creates latitude and longitude lines
+    const svg = d3
+      .select(".worldmap")
+      .attr("width", width)
+      .attr("height", height);
+
     const projection = d3
       .geoMercator()
       .scale(170)
@@ -32,28 +48,41 @@ class Map {
         .attr("id", (d) => {
           return d.properties.name;
         })
-        .attr("stroke","gray")
+        .attr("stroke", "gray")
         .attr("fill", "blue")
         .attr("fill-opacity", (d) => {
-            const name = d.properties.name;
-            return Data.color(name);
+          const name = d.properties.name;
+          return Data.color(name);
         })
         .attr("d", path)
+        // displays hover-tooltip when hovering over country
         .on("mouseover", (e) => {
+          // create hover tooltip
+
           const name = e.target.__data__.properties.name;
-          Data.countryStats(name, e);
-          // const domEle = document.getElementById("hover-info");
-          // domEle.innerHTML = name;
-          // console.log(name);
+          
+          const tooltipDiv = document.getElementById("tooltip");
+          tooltipDiv.innerHTML = name;
+          tooltipDiv.style.position = "absolute";
+          tooltipDiv.style.top = d3.pointer(e,this)[0]+10 + "px";
+          tooltipDiv.style.left = d3.pointer(e,this)[1]+10 + "px";
+          tooltipDiv.style.opacity = .7;
+            Data.countryStats(name, e);
+        })
+        .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
+        .on("mousemove", (e) => {
+          d3.select("#tooltip")
+            .style("left", d3.pointer(e,this)[0]+10 + "px")
+            .style("top", d3.pointer(e,this)[1]+10 + "px")
         })
         .on("click", (e) => {
           // shows data for country on left side of site on click
           const name = e.target.__data__.properties.name;
           // write general bar graph based on element id
+          document.getElementById("bar_graph_and_data").remove();
           // and input country name to function to update info
-          Data.update();
-        })
-        Data.color('Russia')
+          new Data(name);
+        });
     });
   }
 }

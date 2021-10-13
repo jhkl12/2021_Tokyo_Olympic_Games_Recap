@@ -1,5 +1,42 @@
-@import "./styles/example.scss"; // import the file from our styles so it will be bundled
 
-#main {
-    color: $color; // $color was defined in example.scss, which we can use because it's imported before we hit this
+body {
+    background-color: rgb(175, 175, 175);
+}
+
+#header{
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.flex-container{
+    display: flex;
+    justify-content:end;
+    flex-direction: column;
+}
+
+.map-and-data-container {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 8;
+    // The flex-grow property specifies how much a flex item will grow 
+    // relative to the rest of the flex items. higher number=> more growth
+}
+path:hover{
+    fill: red;
+    fill-opacity: 1;
+    opacity: 1;
+}
+.nav{
+    text-align: right;
+}
+.data{
+    border-radius: 25px;
+    background-color: white;
+}
+.map{
+    border-radius: 90px;
+    background-color: white;
+}
+.country_name{
+    text-align: center;
 }

@@ -1,0 +1,880 @@
+{
+   "1": [
+      {
+         "NOC": "United States of America",
+         "Gold": 39,
+         "Silver": 41,
+         "Bronze": 33,
+         "Total": 113,
+         "Rank by Total": 1
+      }
+   ],
+   "2": [
+      {
+         "NOC": "China",
+         "Gold": 38,
+         "Silver": 32,
+         "Bronze": 18,
+         "Total": 88,
+         "Rank by Total": 2
+      }
+   ],
+   "3": [
+      {
+         "NOC": "Japan",
+         "Gold": 27,
+         "Silver": 14,
+         "Bronze": 17,
+         "Total": 58,
+         "Rank by Total": 5
+      }
+   ],
+   "4": [
+      {
+         "NOC": "Great Britain",
+         "Gold": 22,
+         "Silver": 21,
+         "Bronze": 22,
+         "Total": 65,
+         "Rank by Total": 4
+      }
+   ],
+   "5": [
+      {
+         "NOC": "ROC",
+         "Gold": 20,
+         "Silver": 28,
+         "Bronze": 23,
+         "Total": 71,
+         "Rank by Total": 3
+      }
+   ],
+   "6": [
+      {
+         "NOC": "Australia",
+         "Gold": 17,
+         "Silver": 7,
+         "Bronze": 22,
+         "Total": 46,
+         "Rank by Total": 6
+      }
+   ],
+   "7": [
+      {
+         "NOC": "Netherlands",
+         "Gold": 10,
+         "Silver": 12,
+         "Bronze": 14,
+         "Total": 36,
+         "Rank by Total": 9
+      }
+   ],
+   "8": [
+      {
+         "NOC": "France",
+         "Gold": 10,
+         "Silver": 12,
+         "Bronze": 11,
+         "Total": 33,
+         "Rank by Total": 10
+      }
+   ],
+   "9": [
+      {
+         "NOC": "Germany",
+         "Gold": 10,
+         "Silver": 11,
+         "Bronze": 16,
+         "Total": 37,
+         "Rank by Total": 8
+      }
+   ],
+   "10": [
+      {
+         "NOC": "Italy",
+         "Gold": 10,
+         "Silver": 10,
+         "Bronze": 20,
+         "Total": 40,
+         "Rank by Total": 7
+      }
+   ],
+   "11": [
+      {
+         "NOC": "Canada",
+         "Gold": 7,
+         "Silver": 6,
+         "Bronze": 11,
+         "Total": 24,
+         "Rank by Total": 11
+      }
+   ],
+   "12": [
+      {
+         "NOC": "Brazil",
+         "Gold": 7,
+         "Silver": 6,
+         "Bronze": 8,
+         "Total": 21,
+         "Rank by Total": 12
+      }
+   ],
+   "13": [
+      {
+         "NOC": "New Zealand",
+         "Gold": 7,
+         "Silver": 6,
+         "Bronze": 7,
+         "Total": 20,
+         "Rank by Total": 13
+      }
+   ],
+   "14": [
+      {
+         "NOC": "Cuba",
+         "Gold": 7,
+         "Silver": 3,
+         "Bronze": 5,
+         "Total": 15,
+         "Rank by Total": 18
+      }
+   ],
+   "15": [
+      {
+         "NOC": "Hungary",
+         "Gold": 6,
+         "Silver": 7,
+         "Bronze": 7,
+         "Total": 20,
+         "Rank by Total": 13
+      }
+   ],
+   "16": [
+      {
+         "NOC": "Republic of Korea",
+         "Gold": 6,
+         "Silver": 4,
+         "Bronze": 10,
+         "Total": 20,
+         "Rank by Total": 13
+      }
+   ],
+   "17": [
+      {
+         "NOC": "Poland",
+         "Gold": 4,
+         "Silver": 5,
+         "Bronze": 5,
+         "Total": 14,
+         "Rank by Total": 19
+      }
+   ],
+   "18": [
+      {
+         "NOC": "Czech Republic",
+         "Gold": 4,
+         "Silver": 4,
+         "Bronze": 3,
+         "Total": 11,
+         "Rank by Total": 23
+      }
+   ],
+   "19": [
+      {
+         "NOC": "Kenya",
+         "Gold": 4,
+         "Silver": 4,
+         "Bronze": 2,
+         "Total": 10,
+         "Rank by Total": 25
+      }
+   ],
+   "20": [
+      {
+         "NOC": "Norway",
+         "Gold": 4,
+         "Silver": 2,
+         "Bronze": 2,
+         "Total": 8,
+         "Rank by Total": 29
+      }
+   ],
+   "21": [
+      {
+         "NOC": "Jamaica",
+         "Gold": 4,
+         "Silver": 1,
+         "Bronze": 4,
+         "Total": 9,
+         "Rank by Total": 26
+      }
+   ],
+   "22": [
+      {
+         "NOC": "Spain",
+         "Gold": 3,
+         "Silver": 8,
+         "Bronze": 6,
+         "Total": 17,
+         "Rank by Total": 17
+      }
+   ],
+   "23": [
+      {
+         "NOC": "Sweden",
+         "Gold": 3,
+         "Silver": 6,
+         "Bronze": 0,
+         "Total": 9,
+         "Rank by Total": 26
+      }
+   ],
+   "24": [
+      {
+         "NOC": "Switzerland",
+         "Gold": 3,
+         "Silver": 4,
+         "Bronze": 6,
+         "Total": 13,
+         "Rank by Total": 20
+      }
+   ],
+   "25": [
+      {
+         "NOC": "Denmark",
+         "Gold": 3,
+         "Silver": 4,
+         "Bronze": 4,
+         "Total": 11,
+         "Rank by Total": 23
+      }
+   ],
+   "26": [
+      {
+         "NOC": "Croatia",
+         "Gold": 3,
+         "Silver": 3,
+         "Bronze": 2,
+         "Total": 8,
+         "Rank by Total": 29
+      }
+   ],
+   "27": [
+      {
+         "NOC": "Islamic Republic of Iran",
+         "Gold": 3,
+         "Silver": 2,
+         "Bronze": 2,
+         "Total": 7,
+         "Rank by Total": 33
+      }
+   ],
+   "28": [
+      {
+         "NOC": "Serbia",
+         "Gold": 3,
+         "Silver": 1,
+         "Bronze": 5,
+         "Total": 9,
+         "Rank by Total": 26
+      }
+   ],
+   "29": [
+      {
+         "NOC": "Belgium",
+         "Gold": 3,
+         "Silver": 1,
+         "Bronze": 3,
+         "Total": 7,
+         "Rank by Total": 33
+      }
+   ],
+   "30": [
+      {
+         "NOC": "Bulgaria",
+         "Gold": 3,
+         "Silver": 1,
+         "Bronze": 2,
+         "Total": 6,
+         "Rank by Total": 39
+      }
+   ],
+   "31": [
+      {
+         "NOC": "Slovenia",
+         "Gold": 3,
+         "Silver": 1,
+         "Bronze": 1,
+         "Total": 5,
+         "Rank by Total": 42
+      }
+   ],
+   "32": [
+      {
+         "NOC": "Uzbekistan",
+         "Gold": 3,
+         "Silver": 0,
+         "Bronze": 2,
+         "Total": 5,
+         "Rank by Total": 42
+      }
+   ],
+   "33": [
+      {
+         "NOC": "Georgia",
+         "Gold": 2,
+         "Silver": 5,
+         "Bronze": 1,
+         "Total": 8,
+         "Rank by Total": 29
+      }
+   ],
+   "34": [
+      {
+         "NOC": "Chinese Taipei",
+         "Gold": 2,
+         "Silver": 4,
+         "Bronze": 6,
+         "Total": 12,
+         "Rank by Total": 22
+      }
+   ],
+   "35": [
+      {
+         "NOC": "Turkey",
+         "Gold": 2,
+         "Silver": 2,
+         "Bronze": 9,
+         "Total": 13,
+         "Rank by Total": 20
+      }
+   ],
+   "36": [
+      {
+         "NOC": "Greece",
+         "Gold": 2,
+         "Silver": 1,
+         "Bronze": 1,
+         "Total": 4,
+         "Rank by Total": 47
+      },
+      {
+         "NOC": "Uganda",
+         "Gold": 2,
+         "Silver": 1,
+         "Bronze": 1,
+         "Total": 4,
+         "Rank by Total": 47
+      }
+   ],
+   "38": [
+      {
+         "NOC": "Ecuador",
+         "Gold": 2,
+         "Silver": 1,
+         "Bronze": 0,
+         "Total": 3,
+         "Rank by Total": 60
+      }
+   ],
+   "39": [
+      {
+         "NOC": "Ireland",
+         "Gold": 2,
+         "Silver": 0,
+         "Bronze": 2,
+         "Total": 4,
+         "Rank by Total": 47
+      },
+      {
+         "NOC": "Israel",
+         "Gold": 2,
+         "Silver": 0,
+         "Bronze": 2,
+         "Total": 4,
+         "Rank by Total": 47
+      }
+   ],
+   "41": [
+      {
+         "NOC": "Qatar",
+         "Gold": 2,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 3,
+         "Rank by Total": 60
+      }
+   ],
+   "42": [
+      {
+         "NOC": "Bahamas",
+         "Gold": 2,
+         "Silver": 0,
+         "Bronze": 0,
+         "Total": 2,
+         "Rank by Total": 66
+      },
+      {
+         "NOC": "Kosovo",
+         "Gold": 2,
+         "Silver": 0,
+         "Bronze": 0,
+         "Total": 2,
+         "Rank by Total": 66
+      }
+   ],
+   "44": [
+      {
+         "NOC": "Ukraine",
+         "Gold": 1,
+         "Silver": 6,
+         "Bronze": 12,
+         "Total": 19,
+         "Rank by Total": 16
+      }
+   ],
+   "45": [
+      {
+         "NOC": "Belarus",
+         "Gold": 1,
+         "Silver": 3,
+         "Bronze": 3,
+         "Total": 7,
+         "Rank by Total": 33
+      }
+   ],
+   "46": [
+      {
+         "NOC": "Romania",
+         "Gold": 1,
+         "Silver": 3,
+         "Bronze": 0,
+         "Total": 4,
+         "Rank by Total": 47
+      },
+      {
+         "NOC": "Venezuela",
+         "Gold": 1,
+         "Silver": 3,
+         "Bronze": 0,
+         "Total": 4,
+         "Rank by Total": 47
+      }
+   ],
+   "48": [
+      {
+         "NOC": "India",
+         "Gold": 1,
+         "Silver": 2,
+         "Bronze": 4,
+         "Total": 7,
+         "Rank by Total": 33
+      }
+   ],
+   "49": [
+      {
+         "NOC": "Hong Kong, China",
+         "Gold": 1,
+         "Silver": 2,
+         "Bronze": 3,
+         "Total": 6,
+         "Rank by Total": 39
+      }
+   ],
+   "50": [
+      {
+         "NOC": "Philippines",
+         "Gold": 1,
+         "Silver": 2,
+         "Bronze": 1,
+         "Total": 4,
+         "Rank by Total": 47
+      },
+      {
+         "NOC": "Slovakia",
+         "Gold": 1,
+         "Silver": 2,
+         "Bronze": 1,
+         "Total": 4,
+         "Rank by Total": 47
+      }
+   ],
+   "52": [
+      {
+         "NOC": "South Africa",
+         "Gold": 1,
+         "Silver": 2,
+         "Bronze": 0,
+         "Total": 3,
+         "Rank by Total": 60
+      }
+   ],
+   "53": [
+      {
+         "NOC": "Austria",
+         "Gold": 1,
+         "Silver": 1,
+         "Bronze": 5,
+         "Total": 7,
+         "Rank by Total": 33
+      }
+   ],
+   "54": [
+      {
+         "NOC": "Egypt",
+         "Gold": 1,
+         "Silver": 1,
+         "Bronze": 4,
+         "Total": 6,
+         "Rank by Total": 39
+      }
+   ],
+   "55": [
+      {
+         "NOC": "Indonesia",
+         "Gold": 1,
+         "Silver": 1,
+         "Bronze": 3,
+         "Total": 5,
+         "Rank by Total": 42
+      }
+   ],
+   "56": [
+      {
+         "NOC": "Ethiopia",
+         "Gold": 1,
+         "Silver": 1,
+         "Bronze": 2,
+         "Total": 4,
+         "Rank by Total": 47
+      },
+      {
+         "NOC": "Portugal",
+         "Gold": 1,
+         "Silver": 1,
+         "Bronze": 2,
+         "Total": 4,
+         "Rank by Total": 47
+      }
+   ],
+   "58": [
+      {
+         "NOC": "Tunisia",
+         "Gold": 1,
+         "Silver": 1,
+         "Bronze": 0,
+         "Total": 2,
+         "Rank by Total": 66
+      }
+   ],
+   "59": [
+      {
+         "NOC": "Estonia",
+         "Gold": 1,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 2,
+         "Rank by Total": 66
+      },
+      {
+         "NOC": "Fiji",
+         "Gold": 1,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 2,
+         "Rank by Total": 66
+      },
+      {
+         "NOC": "Latvia",
+         "Gold": 1,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 2,
+         "Rank by Total": 66
+      },
+      {
+         "NOC": "Thailand",
+         "Gold": 1,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 2,
+         "Rank by Total": 66
+      }
+   ],
+   "63": [
+      {
+         "NOC": "Bermuda",
+         "Gold": 1,
+         "Silver": 0,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Morocco",
+         "Gold": 1,
+         "Silver": 0,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Puerto Rico",
+         "Gold": 1,
+         "Silver": 0,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      }
+   ],
+   "66": [
+      {
+         "NOC": "Colombia",
+         "Gold": 0,
+         "Silver": 4,
+         "Bronze": 1,
+         "Total": 5,
+         "Rank by Total": 42
+      }
+   ],
+   "67": [
+      {
+         "NOC": "Azerbaijan",
+         "Gold": 0,
+         "Silver": 3,
+         "Bronze": 4,
+         "Total": 7,
+         "Rank by Total": 33
+      }
+   ],
+   "68": [
+      {
+         "NOC": "Dominican Republic",
+         "Gold": 0,
+         "Silver": 3,
+         "Bronze": 2,
+         "Total": 5,
+         "Rank by Total": 42
+      }
+   ],
+   "69": [
+      {
+         "NOC": "Armenia",
+         "Gold": 0,
+         "Silver": 2,
+         "Bronze": 2,
+         "Total": 4,
+         "Rank by Total": 47
+      }
+   ],
+   "70": [
+      {
+         "NOC": "Kyrgyzstan",
+         "Gold": 0,
+         "Silver": 2,
+         "Bronze": 1,
+         "Total": 3,
+         "Rank by Total": 60
+      }
+   ],
+   "71": [
+      {
+         "NOC": "Mongolia",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 3,
+         "Total": 4,
+         "Rank by Total": 47
+      }
+   ],
+   "72": [
+      {
+         "NOC": "Argentina",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 2,
+         "Total": 3,
+         "Rank by Total": 60
+      },
+      {
+         "NOC": "San Marino",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 2,
+         "Total": 3,
+         "Rank by Total": 60
+      }
+   ],
+   "74": [
+      {
+         "NOC": "Jordan",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 1,
+         "Total": 2,
+         "Rank by Total": 66
+      },
+      {
+         "NOC": "Malaysia",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 1,
+         "Total": 2,
+         "Rank by Total": 66
+      },
+      {
+         "NOC": "Nigeria",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 1,
+         "Total": 2,
+         "Rank by Total": 66
+      }
+   ],
+   "77": [
+      {
+         "NOC": "Bahrain",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Saudi Arabia",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Lithuania",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "North Macedonia",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Namibia",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Turkmenistan",
+         "Gold": 0,
+         "Silver": 1,
+         "Bronze": 0,
+         "Total": 1,
+         "Rank by Total": 77
+      }
+   ],
+   "83": [
+      {
+         "NOC": "Kazakhstan",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 8,
+         "Total": 8,
+         "Rank by Total": 29
+      }
+   ],
+   "84": [
+      {
+         "NOC": "Mexico",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 4,
+         "Total": 4,
+         "Rank by Total": 47
+      }
+   ],
+   "85": [
+      {
+         "NOC": "Finland",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 2,
+         "Total": 2,
+         "Rank by Total": 66
+      }
+   ],
+   "86": [
+      {
+         "NOC": "Botswana",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Burkina Faso",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Côte d'Ivoire",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Ghana",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Grenada",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Kuwait",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Republic of Moldova",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 1,
+         "Rank by Total": 77
+      },
+      {
+         "NOC": "Syrian Arab Republic",
+         "Gold": 0,
+         "Silver": 0,
+         "Bronze": 1,
+         "Total": 1,
+         "Rank by Total": 77
+      }
+   ]
+}

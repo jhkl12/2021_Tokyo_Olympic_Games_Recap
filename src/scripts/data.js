@@ -5,20 +5,17 @@ const topojson = require("topojson-client");
 class Data {
   constructor(country) {
     // set the dimensions and margins of the graph
-    var margin = { top: 10, right: 30, bottom: 90, left: 40 },
+    var margin = { top: 10, right: 30, bottom: 90, left: 90 },
       width = 460 - margin.left - margin.right,
       height = 450 - margin.top - margin.bottom;
 
     let dat = medalData;
-    d3.select("#data_section")
-      .append("h2")
-      .attr("class","country_name")
-      .text(country)
+    d3.select(".country_name").text(country);
     // append the svg object to the body of the page
     var svg = d3
       .select("#data_section")
       .append("div")
-      .attr("id","bar_graph_and_data")
+      .attr("id", "bar_graph_and_data")
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -72,6 +69,14 @@ class Data {
         .append("title")
         .text((d) => `${d.Medal}: ${d.Value}`);
 
+      svg
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left + 30)
+        .attr("x", 0 - height / 2)
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Medal Count");
       // Animation
       svg
         .selectAll("rect")
@@ -83,33 +88,72 @@ class Data {
           console.log(i);
           return i * 100;
         });
-        d3.select("#bar_graph_and_data")
+      d3.select(".country_name")
         .append("button")
         .text("Compare Countries")
-        .on("click", (e)=> {
-            document.getElementById("bar_graph_and_data").remove();
-            Data.countryComparison();
-        })
+        .style("display", "block")
+        .style("margin", "auto")
+        .on("click", (e) => {
+          document.getElementById("bar_graph_and_data").remove();
+          Data.countryComparison();
+        });
     });
+
+    d3.json("data/Athletes_by_country.json").then((data) => {
+      debugger;
+
+      const createTable = (data, columns) => {
+        d3.select("#table").remove();
+        const table = d3.select("#data_section").append("table").attr("id","table");
+        const thead = table.append("thead");
+        const tbody = table.append("tbody");
+
+        thead
+          .append("tr")
+          .selectAll("th")
+          .data(columns)
+          .enter()
+          .append("th")
+          .text((column) => column);
+
+        const rows = tbody.selectAll("tr").data(data).enter().append("tr");
+
+        const cells = rows
+          .selectAll("td")
+          .data(function (row) {
+            return columns.map(function (column) {
+              return { column: column, value: row[column] };
+            });
+          })
+          .enter()
+          .append("td")
+          .text(function (d) {
+            return d.value;
+          });
+
+        return table;
+      };
+      createTable(data[country], ["Name","Discipline"])
+    });
+
   }
 
   static countryComparison = () => {
     // if no country is passed in, create chart on top countries
-    
-
+    d3.select("#table").remove()
     // set the dimensions and margins of the graph
     const margin = { top: 10, right: 30, bottom: 20, left: 50 };
     const width = 700 - margin.left - margin.right;
     const height = 600 - margin.top - margin.bottom;
-
+    d3.select("#data_section")
+      .append("h2")
+      .attr("class", "country_name")
+      .text("Top 10");
     // append the svg object to the body of the page
     const svg = d3
       .select("#data_section")
       .append("div")
-      .attr("id","bar_graph_and_data")
-      .append("h2")
-      .attr("class","country_name")
-      .text("Top 10")
+      .attr("id", "bar_graph_and_data")
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -117,6 +161,21 @@ class Data {
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
+    svg
+      .append("text")
+      .attr("x", width / 2)
+      .attr("y", height + margin.top)
+      .style("text-anchor", "middle")
+      .text("Date");
+
+    svg
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x", 0 - height / 2)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Medal Count");
     // Parsing the Data
     d3.csv("data/Top Medal Earners.csv").then((data) => {
       // List of subgroups = header of the csv files = soil condition here
@@ -186,14 +245,12 @@ class Data {
         d3.select("#tooltip")
           .transition()
           .duration(200)
-          .style("opacity", 1)
-          .text(tooltipText);
+          .text(
+            `${country} \n => \n Rank: ${rank}\n Gold: ${gold}\n Silver: ${silver}, Bronze: ${bronze}, Total: ${total}`
+          );
       } else {
-        let tooltipText = `${country} \n => \n Rank: N/A \n Gold: 0 \n Silver: 0, Bronze: 0, Total: 0`;
-        d3.select("#tooltip")
-          .transition()
-          .duration(200)
-          .text(tooltipText);
+        let tooltipText = `${country} Rank: N/A, Gold: 0, Silver: 0, Bronze: 0, Total: 0`;
+        d3.select("#tooltip").transition().duration(200).text(tooltipText);
       }
     });
   };
@@ -208,7 +265,6 @@ class Data {
       return 0;
     }
   };
-
 }
 
 export default Data;

@@ -16,11 +16,12 @@ class Map {
     .style("text-align","left")
     .style("padding",16+"px")
     .style("background-color","lightsalmon")
-    .style("border","1px","solid","black")
+    .style("border","1px solid black")
     .style("width","auto")
     .style("opacity",0)
     .style("color","black")
     .style("position","absolute")
+    .style("z-index",3)
     // creating map
     const width = 1100;
     const height = 700;
@@ -66,7 +67,7 @@ class Map {
           tooltipDiv.style.position = "absolute";
           tooltipDiv.style.top = d3.pointer(e,this)[0]+10 + "px";
           tooltipDiv.style.left = d3.pointer(e,this)[1]+10 + "px";
-          tooltipDiv.style.opacity = .7;
+          tooltipDiv.style.opacity = .92;
             Data.countryStats(name, e);
         })
         .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))

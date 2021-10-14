@@ -187,9 +187,7 @@ class Data {
       .text("Medal Count");
     // Parsing the Data
     d3.csv("data/Top Medal Earners.csv").then((data) => {
-      // List of subgroups = header of the csv files = soil condition here
-      const subgroups = data.columns.slice(1);
-      // List of groups = species here = value of the first column called group -> I show them on the X axis
+      const medals = data.columns.slice(1);
       const groups = data.map((d) => d.NOC);
 
       // X axis
@@ -205,11 +203,11 @@ class Data {
 
       const color = d3
         .scaleOrdinal()
-        .domain(subgroups)
+        .domain(medals)
         .range(["#FEE101", "#D7D7D7", "#CC6633"]); //update with more specific colors
 
       // Stack per subgroup
-      const stackedData = d3.stack().keys(subgroups)(data);
+      const stackedData = d3.stack().keys(medals)(data);
 
       // Bars
       svg
@@ -224,7 +222,7 @@ class Data {
         .data((d) => d)
         .join("rect")
         .attr("x", (d) => x(d.data.NOC))
-        .attr("y", (d) => y(0))
+        .attr("y", (d) => y(-10))
         .attr("height", (d) => y(0))
         .attr("width", x.bandwidth());
 

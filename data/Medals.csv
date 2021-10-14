@@ -32,7 +32,7 @@ Bulgaria,30,3,1,2,6,39
 Slovenia,31,3,1,1,5,42
 Uzbekistan,32,3,0,2,5,42
 Georgia,33,2,5,1,8,29
-Chinese Taipei,34,2,4,6,12,22
+Taiwan,34,2,4,6,12,22
 Turkey,35,2,2,9,13,20
 Greece,36,2,1,1,4,47
 Uganda,36,2,1,1,4,47
@@ -47,7 +47,7 @@ Belarus,45,1,3,3,7,33
 Romania,46,1,3,0,4,47
 Venezuela,46,1,3,0,4,47
 India,48,1,2,4,7,33
-"Hong Kong, China",49,1,2,3,6,39
+Hong Kong,49,1,2,3,6,39
 Philippines,50,1,2,1,4,47
 Slovakia,50,1,2,1,4,47
 South Africa,52,1,2,0,3,60
@@ -91,4 +91,4 @@ Ghana,86,0,0,1,1,77
 Grenada,86,0,0,1,1,77
 Kuwait,86,0,0,1,1,77
 Republic of Moldova,86,0,0,1,1,77
-Syrian Arab Republic,86,0,0,1,1,77
+Syria,86,0,0,1,1,77

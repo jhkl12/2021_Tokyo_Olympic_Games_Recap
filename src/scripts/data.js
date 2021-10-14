@@ -114,7 +114,8 @@ class Data {
         const table = d3
           .select("#data_section")
           .append("table")
-          .attr("id", "table");
+          .attr("id", "table")
+          .style("margin-left","40px");
         const thead = table.append("thead");
         const tbody = table.append("tbody");
 
@@ -126,10 +127,10 @@ class Data {
           .append("th")
           .text((column) => column);
 
-        const rows = tbody.selectAll("tr").data(data).enter().append("tr");
+        const rows = tbody.selectAll("tr")
+        .data(data).enter().append("tr");
 
-        const cells = rows
-          .selectAll("td")
+        rows.selectAll("td")
           .data(function (row) {
             return columns.map(function (column) {
               return { column: column, value: row[column] };

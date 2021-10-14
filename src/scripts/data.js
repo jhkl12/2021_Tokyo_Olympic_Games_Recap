@@ -32,7 +32,7 @@ class Data {
       ];
 
       // X axis
-      var x = d3
+      const x = d3
         .scaleBand()
         .range([0, width])
         .domain(data.map((d) => d.Medal))
@@ -44,7 +44,12 @@ class Data {
         .selectAll("text")
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
-
+      svg
+      .append("text")
+      .attr("x", width / 2)
+      .attr("y", height + margin.top+35)
+      .style("text-anchor", "middle")
+      .text("Country");
       // Add Y axis
       var y = d3.scaleLinear().domain([0, 60]).range([height, 0]);
       svg.append("g").call(d3.axisLeft(y));
@@ -55,6 +60,7 @@ class Data {
         if (medal === "Silver") return "#D7D7D7";
         if (medal === "Bronze") return "#CC6633";
       };
+      
       svg
         .selectAll("bars")
         .data(data)
@@ -85,7 +91,6 @@ class Data {
         .attr("y", (d) => y(d.Value))
         .attr("height", (d) => height - y(d.Value))
         .delay((d, i) => {
-          console.log(i);
           return i * 100;
         });
       d3.select(".country_name")
@@ -104,7 +109,10 @@ class Data {
 
       const createTable = (data, columns) => {
         d3.select("#table").remove();
-        const table = d3.select("#data_section").append("table").attr("id","table");
+        const table = d3
+          .select("#data_section")
+          .append("table")
+          .attr("id", "table");
         const thead = table.append("thead");
         const tbody = table.append("tbody");
 
@@ -133,16 +141,15 @@ class Data {
 
         return table;
       };
-      createTable(data[country], ["Name","Discipline"])
+      createTable(data[country], ["Name", "Discipline"]);
     });
-
   }
 
   static countryComparison = () => {
     // if no country is passed in, create chart on top countries
-    d3.select("#table").remove()
+    d3.select("#table").remove();
     // set the dimensions and margins of the graph
-    const margin = { top: 10, right: 30, bottom: 20, left: 50 };
+    const margin = { top: 10, right: 30, bottom: 40, left: 50 };
     const width = 700 - margin.left - margin.right;
     const height = 600 - margin.top - margin.bottom;
     d3.select("#data_section")
@@ -164,9 +171,9 @@ class Data {
     svg
       .append("text")
       .attr("x", width / 2)
-      .attr("y", height + margin.top)
+      .attr("y", height + margin.top + 20)
       .style("text-anchor", "middle")
-      .text("Date");
+      .text("Country");
 
     svg
       .append("text")
@@ -219,6 +226,7 @@ class Data {
         .attr("height", (d) => y(0))
         .attr("width", x.bandwidth());
 
+      // Animation
       svg
         .selectAll("rect")
         .transition()
@@ -226,31 +234,41 @@ class Data {
         .attr("y", (d) => y(d[1]))
         .attr("height", (d) => y(d[0]) - y(d[1]))
         .delay((d, i) => {
-          console.log(i);
           return i * 100;
         });
     });
   };
   //country stats for hover-tooltip
   static countryStats = (country, e) => {
+    d3.select("#tooltip_data_container").remove()
     d3.json("data/Medals.json").then((data) => {
-      const domEle = document.getElementById("tooltip");
       if (data[country]) {
         const rank = data[country].Rank;
         const gold = data[country].Gold;
         const silver = data[country].Silver;
         const bronze = data[country].Bronze;
         const total = gold + silver + bronze;
-        let tooltipText = `${country} \n => \n Rank: ${rank}\n Gold: ${gold}\n Silver: ${silver}, Bronze: ${bronze}, Total: ${total}`;
+        let arrTool = [`${country}`,`Rank: ${rank}`,`Gold: ${gold}`,`Silver: ${silver}`,`Bronze: ${bronze}`]
         d3.select("#tooltip")
-          .transition()
-          .duration(200)
-          .text(
-            `${country} \n => \n Rank: ${rank}\n Gold: ${gold}\n Silver: ${silver}, Bronze: ${bronze}, Total: ${total}`
-          );
+          .append("div")
+          .attr("id","tooltip_data_container")
+        for(let i=0;i<arrTool.length;i++){
+          d3.select("#tooltip_data_container")
+          .append("div")
+          .style("display","block")
+          .text(arrTool[i])
+        }
       } else {
-        let tooltipText = `${country} Rank: N/A, Gold: 0, Silver: 0, Bronze: 0, Total: 0`;
-        d3.select("#tooltip").transition().duration(200).text(tooltipText);
+        let arrTool = [`${country}`,`Rank: N/A`,`Gold: 0`,`Silver: 0`,`Bronze: 0`]
+        d3.select("#tooltip")
+          .append("div")
+          .attr("id","tooltip_data_container")
+        for(let i=0;i<arrTool.length;i++){
+          d3.select("#tooltip_data_container")
+          .append("div")
+          .style("display","block")
+          .text(arrTool[i])
+        }
       }
     });
   };

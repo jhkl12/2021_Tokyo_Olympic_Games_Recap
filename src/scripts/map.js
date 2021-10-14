@@ -38,7 +38,7 @@ class Map {
     const path = d3.geoPath(projection);
 
     const g = svg.append("g");
-    d3.json("data/countries-50m (1).json").then((data) => {
+    d3.json("data/countries-50m.json").then((data) => {
       const countries = topojson.feature(data, data.objects.countries);
 
       g.selectAll("path")
@@ -46,9 +46,7 @@ class Map {
         .enter()
         .append("path")
         .attr("class", "country")
-        .attr("id", (d) => {
-          return d.properties.name;
-        })
+        .attr("id", (d) => d.properties.name)
         .attr("stroke", "gray")
         .attr("fill", "blue")
         .attr("fill-opacity", (d) => {
@@ -58,13 +56,11 @@ class Map {
         .attr("d", path)
         // displays hover-tooltip when hovering over country
         .on("mouseover", (e) => {
-          // create hover tooltip
-
+          
           const name = e.target.__data__.properties.name;
           
+          // Creating hover tooltip
           const tooltipDiv = document.getElementById("tooltip");
-          tooltipDiv.innerHTML = name;
-          tooltipDiv.style.position = "absolute";
           tooltipDiv.style.top = d3.pointer(e,this)[0]+10 + "px";
           tooltipDiv.style.left = d3.pointer(e,this)[1]+10 + "px";
           tooltipDiv.style.opacity = .92;

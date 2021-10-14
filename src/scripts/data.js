@@ -26,6 +26,7 @@ class Data {
     // Parse the Data
     d3.json("data/Medals.json").then((data) => {
       if (data[country]) {
+        Data.topTenButton();
         data = [
           { Medal: "Gold", Value: data[country].Gold },
           { Medal: "Silver", Value: data[country].Silver },
@@ -93,16 +94,8 @@ class Data {
           .delay((d, i) => {
             return i * 100;
           });
-        d3.select(".country_name")
-          .append("button")
-          .text("Compare Countries")
-          .style("display", "block")
-          .style("margin", "auto")
-          .on("click", (e) => {
-            document.getElementById("bar_graph_and_data").remove();
-            Data.countryComparison();
-          });
       } else {
+        Data.topTenButton();
         d3.select("#bar_graph").remove();
         d3.select("#bar_graph_and_data")
           .append("iframe")
@@ -246,6 +239,17 @@ class Data {
           return i * 100;
         });
     });
+  };
+  static topTenButton = () => {
+    d3.select(".country_name")
+      .append("button")
+      .text("Compare Countries")
+      .style("display", "block")
+      .style("margin", "auto")
+      .on("click", (e) => {
+        document.getElementById("bar_graph_and_data").remove();
+        Data.countryComparison();
+      });
   };
   //country stats for hover-tooltip
   static countryStats = (country, e) => {

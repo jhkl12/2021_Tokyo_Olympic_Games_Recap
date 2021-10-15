@@ -4,14 +4,13 @@ const topojson = require("topojson-client");
 
 class Data {
   constructor(country) {
-    // set the dimensions and margins of the graph
+    // Dimensions and margins of the graph
     const margin = { top: 10, right: 30, bottom: 90, left: 90 },
       width = 460 - margin.left - margin.right,
       height = 450 - margin.top - margin.bottom;
 
     d3.select(".country_name").text(country);
-    // append the svg object to the body of the page
-
+    // Append the svg object to the body of the page
     const svg = d3
       .select("#data_section")
       .append("div")
@@ -51,7 +50,7 @@ class Data {
           .attr("y", height + margin.top + 35)
           .style("text-anchor", "middle")
           .text("Country");
-        // Add Y axis
+        // Y axis
         let y = d3.scaleLinear().domain([0, 60]).range([height, 0]);
         svg.append("g").call(d3.axisLeft(y));
 
@@ -70,8 +69,7 @@ class Data {
           .attr("x", (d) => x(d.Medal))
           .attr("width", x.bandwidth())
           .attr("fill", (d) => color(d.Medal))
-          // no bar at the beginning thus:
-          .attr("height", (d) => height - y(0)) // always equal to 0
+          .attr("height", (d) => height - y(0)) 
           .attr("y", (d) => y(0))
           .append("title")
           .text((d) => `${d.Medal}: ${d.Value}`);
@@ -84,6 +82,7 @@ class Data {
           .attr("dy", "1em")
           .style("text-anchor", "middle")
           .text("Medal Count");
+
         // Animation
         svg
           .selectAll("rect")
@@ -95,6 +94,7 @@ class Data {
             return i * 100;
           });
       } else {
+        // GIF if country has no medals
         Data.topTenButton();
         d3.select("#bar_graph").remove();
         d3.select("#bar_graph_and_data")
@@ -107,7 +107,8 @@ class Data {
           .attr("allowFullScreen");
       }
     });
-
+    
+    // Athletes
     d3.json("data/Athletes_by_country.json").then((data) => {
       const createTable = (data, columns) => {
         d3.select("#table").remove();
@@ -149,9 +150,9 @@ class Data {
   }
 
   static countryComparison = () => {
-    // if no country is passed in, create chart on top countries
+
     d3.select("#table").remove();
-    // set the dimensions and margins of the graph
+    // Dimensions and margins of graph
     const margin = { top: 10, right: 30, bottom: 40, left: 50 };
     const width = 700 - margin.left - margin.right;
     const height = 600 - margin.top - margin.bottom;
@@ -159,8 +160,8 @@ class Data {
       .append("h2")
       .attr("class", "country_name")
       .text("Top 10");
-    // append the svg object to the body of the page
-    const svg = d3
+
+      const svg = d3
       .select("#data_section")
       .append("div")
       .attr("id", "bar_graph_and_data")
@@ -239,6 +240,7 @@ class Data {
         });
     });
   };
+  // Button to rerender Top 10 countries
   static topTenButton = () => {
     d3.select(".country_name")
       .append("button")
@@ -250,7 +252,7 @@ class Data {
         Data.countryComparison();
       });
   };
-  //country stats for hover-tooltip
+  // Country stats for hover-tooltip
   static countryStats = (country, e) => {
     d3.select("#tooltip_data_container").remove();
     d3.json("data/Medals.json").then((data) => {
@@ -297,7 +299,7 @@ class Data {
     });
   };
 
-  // #color sets opacity for each country's medal count
+  // Set Opacity
   static color = (country) => {
     let countries = medalData;
     let maxMedalCount = 113;

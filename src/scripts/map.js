@@ -3,10 +3,7 @@ const d3 = require("d3");
 const topojson = require("topojson-client");
 
 // TODO
-// create hover popup when hovering over country
 // create legend
-// import athletes on click
-
 
 class Map {
   constructor() {
@@ -73,11 +70,8 @@ class Map {
             .style("top", d3.pointer(e,this)[1]+10 + "px")
         })
         .on("click", (e) => {
-          // shows data for country on left side of site on click
           const name = e.target.__data__.properties.name;
-          // write general bar graph based on element id
           document.getElementById("bar_graph_and_data").remove();
-          // and input country name to function to update info
           new Data(name);
         });
     });

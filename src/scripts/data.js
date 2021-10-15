@@ -8,7 +8,6 @@ class Data {
     const margin = { top: 10, right: 30, bottom: 90, left: 90 },
       width = 460 - margin.left - margin.right,
       height = 450 - margin.top - margin.bottom;
-
     d3.select(".country_name").text(country);
     // Append the svg object to the body of the page
     const svg = d3
@@ -152,6 +151,7 @@ class Data {
   static countryComparison = () => {
 
     d3.select("#table").remove();
+    d3.select(".country_name").remove();
     // Dimensions and margins of graph
     const margin = { top: 10, right: 30, bottom: 40, left: 50 };
     const width = 700 - margin.left - margin.right;

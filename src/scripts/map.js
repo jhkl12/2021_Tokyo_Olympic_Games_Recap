@@ -8,17 +8,17 @@ const topojson = require("topojson-client");
 class Map {
   constructor() {
     d3.select("body")
-    .append("div")
-    .attr("id", "tooltip")
-    .style("text-align","left")
-    .style("padding",16+"px")
-    .style("background-color","lightsalmon")
-    .style("border","1px solid black")
-    .style("width","auto")
-    .style("opacity",0)
-    .style("color","black")
-    .style("position","absolute")
-    .style("z-index",3)
+      .append("div")
+      .attr("id", "tooltip")
+      .style("text-align", "left")
+      .style("padding", 16 + "px")
+      .style("background-color", "lightsalmon")
+      .style("border", "1px solid black")
+      .style("width", "auto")
+      .style("opacity", 0)
+      .style("color", "black")
+      .style("position", "absolute")
+      .style("z-index", 3);
     // creating map
     const width = 1100;
     const height = 700;
@@ -51,23 +51,20 @@ class Map {
           return Data.color(name);
         })
         .attr("d", path)
-        // displays hover-tooltip when hovering over country
         .on("mouseover", (e) => {
-          
+          // Hover-tooltip
           const name = e.target.__data__.properties.name;
-          
-          // Creating hover tooltip
           const tooltipDiv = document.getElementById("tooltip");
-          tooltipDiv.style.top = d3.pointer(e,this)[0]+10 + "px";
-          tooltipDiv.style.left = d3.pointer(e,this)[1]+10 + "px";
-          tooltipDiv.style.opacity = .92;
-            Data.countryStats(name, e);
+          tooltipDiv.style.top = d3.pointer(e, this)[0] + 10 + "px";
+          tooltipDiv.style.left = d3.pointer(e, this)[1] + 10 + "px";
+          tooltipDiv.style.opacity = 0.92;
+          Data.countryStats(name, e);
         })
         .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
         .on("mousemove", (e) => {
           d3.select("#tooltip")
-            .style("left", d3.pointer(e,this)[0]+10 + "px")
-            .style("top", d3.pointer(e,this)[1]+10 + "px")
+            .style("left", d3.pointer(e, this)[0] + 10 + "px")
+            .style("top", d3.pointer(e, this)[1] + 10 + "px");
         })
         .on("click", (e) => {
           const name = e.target.__data__.properties.name;

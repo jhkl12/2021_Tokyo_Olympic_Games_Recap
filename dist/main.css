@@ -33,6 +33,10 @@ body {
   position: relative;
 }
 
+#bar_graph_and_data {
+  width: 500px;
+}
+
 #about-modal-container-clicked {
   display: none;
 }

@@ -1,8 +1,4 @@
 class Modal {
-  constructor() {
-    this.clicked = "false";
-  }
-
   render() {
     const modalContainer = document.createElement("div");
     modalContainer.id = "about-modal-container";
@@ -37,9 +33,8 @@ class Modal {
     continueButton.innerText = "Go to the Data";
     continueButton.id = "continue-button";
 
-    const aboutIcon = document.getElementsByTagName("body")[0];
-    // document.getElementById("about-button");
-    aboutIcon.appendChild(modalContainer);
+    const body = document.getElementsByTagName("body")[0];
+    body.appendChild(modalContainer);
 
     modal.append(header, instructionsContainer, continueButton);
 

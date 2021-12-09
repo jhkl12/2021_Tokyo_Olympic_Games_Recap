@@ -20,6 +20,7 @@ body {
   background-color: white;
   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
   z-index: 5;
+
   #olympics-logo {
     height: 60px;
   }
@@ -44,9 +45,8 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
-  //   background-color: rgba(0, 0, 0, 0);
+  background-color: white;
   #about-modal {
-    // position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,7 +76,6 @@ body {
 #header {
   text-align: center;
   color: black;
-  //   font-family: Arial, Helvetica, sans-serif;
 
   background-color: white;
   border-radius: 25px;
@@ -94,7 +93,6 @@ body {
 
 .map-and-data-container {
   display: flex;
-  // flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 8;
@@ -113,7 +111,6 @@ path:hover {
   margin-left: 100px;
   border-radius: 25px;
   background-color: white;
-  //   transform: scale(0.8);
   max-width: 600px;
 }
 i {

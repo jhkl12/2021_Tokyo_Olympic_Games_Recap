@@ -1,4 +1,4 @@
-# 2021_Tokyo_Olympic_Games_Recap
+# Tokyo Olympics Games Data Visualization
 [Live Link](https://zkural1.github.io/2021_Tokyo_Olympic_Games_Recap)
 
 ![CoverPhoto](https://github.com/zkural1/2021_Tokyo_Olympic_Games_Recap/blob/main/images/CoverImage.png?raw=true)

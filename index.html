@@ -10,13 +10,22 @@
       property="og:description"
       content="This project is a data visualization of the Olympic medals won around the world for the 2021 Tokyo Olympic games. Countries that have won more medals will be colored darker than those with less medals. Users will be able to hover over a country to see the amount of gold, silver, and bronze medals that country has won. Additionally, users will be able to click on a country to see both the medal distribution and athelete(s) participating for that country."
     />
-    <meta property="og:url" content="https://zkural1.github.io/2021_Tokyo_Olympic_Games_Recap/" />
+    <meta
+      property="og:url"
+      content="https://zkural1.github.io/2021_Tokyo_Olympic_Games_Recap/"
+    />
+    <link rel="icon" href="images/Olympics-logo-favicon.jpeg" />
     <link rel="stylesheet" href="src/styles/reset.scss" />
     <link rel="stylesheet" href="./dist/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&family=Montserrat:wght@400;500;600;700&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <script src="./dist/main.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <title>Tokyo Olympic Games Recap</title>
@@ -24,12 +33,17 @@
 
   <body>
     <div class="nav">
-      <a href="https://www.linkedin.com/in/zeki-kural-45b172133/">
-        <i class="fa fa-linkedin"></i
-      ></a>
-      <a href="https://github.com/jhkl12/2021_Tokyo_Olympic_Games_Recap">
-        <i class="fa fa-github-square"></i>
-      </a>
+      <img src="images/Olympics-logo.png" id="olympics-logo" />
+      <div id="icons-container">
+        <i class="fa fa-info-circle" id="about-button"></i>
+        <a href="https://zekikural.dev/"> <i class="fa fa-user"></i></a>
+        <a href="https://www.linkedin.com/in/zeki-kural-45b172133/">
+          <i class="fa fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/jhkl12/2021_Tokyo_Olympic_Games_Recap">
+          <i class="fa fa-github-square"></i>
+        </a>
+      </div>
     </div>
     <div class="flex-container">
       <h1 id="header">Tokyo 2021 Olympics</h1>

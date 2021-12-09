@@ -1,68 +1,160 @@
-
 body {
-    background-color: white;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
-  Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-color: white;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-#header{
-    text-align: center;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    background-color: white;
-    border-radius: 25px;
-    font-size: 55px;
-    font-weight: 500;
-    margin-bottom: 100px;
+.nav {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 40px;
+  margin-right: 25px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgb(204, 204, 204);
+  background-color: white;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  #olympics-logo {
+    height: 60px;
+  }
+  #icons-container {
+    margin-right: 30px;
+  }
+
+  #about-button {
+    position: relative;
+  }
 }
 
-.flex-container{
+#about-modal-container-clicked {
+  display: none;
+}
+#about-modal-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  //   background-color: rgba(0, 0, 0, 0);
+  #about-modal {
+    // position: fixed;
     display: flex;
-    justify-content:end;
     flex-direction: column;
-    background-color: none;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 20vh;
+    left: 20vw;
+    height: 500px;
+    width: 600px;
+    border: 1px solid black;
+    font-size: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.42);
+    h2 {
+      font-size: 25px;
+    }
+
+    #continue-button {
+      background-color: rgb(0, 0, 255);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  }
+}
+
+#header {
+  text-align: center;
+  color: black;
+  //   font-family: Arial, Helvetica, sans-serif;
+
+  background-color: white;
+  border-radius: 25px;
+  font-size: 55px;
+  font-weight: 500;
+  margin: 100px 0px 50px 0px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  background-color: none;
 }
 
 .map-and-data-container {
-    display: flex;
-    justify-content: space-around;
-    flex-grow: 8;
-    // The flex-grow property specifies how much a flex item will grow 
-    // relative to the rest of the flex items. higher number=> more growth
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 8;
+  transform: scale(0.95);
+  // The flex-grow property specifies how much a flex item will grow
+  // relative to the rest of the flex items. higher number=> more growth
 }
-path:hover{
-    fill: red;
-    fill-opacity: 1;
-    opacity: 1;
-}
-.nav{
-    text-align: right;
-    font-size: 48px;
-    color: black;
-    margin-right: 25px;
-    margin-top: 20px;
-}
-.data{
-    border-radius: 25px;
-    background-color: white;
-}
-i{
-    color:rgba(0, 0, 0, 0.412);
-}
-i:hover{
-    color:rgba(0, 0, 0, 0.844);
-
-
-}
-a{
-    margin-left: 20px;
-}
-.map{
-    border-radius: 90px;
-    background-color: white;
-}
-.country_name{
-    text-align: center;
+path:hover {
+  fill: red;
+  fill-opacity: 1;
+  opacity: 1;
 }
 
+.data {
+  height: 800px;
+  margin-left: 100px;
+  border-radius: 25px;
+  background-color: white;
+  //   transform: scale(0.8);
+  max-width: 600px;
+}
+i {
+  color: rgba(0, 0, 0, 0.412);
+}
+i:hover {
+  color: rgba(0, 0, 0, 0.844);
+}
+a {
+  margin-left: 20px;
+}
+#bar_graph {
+  // transform: scale(.8);
+}
+.map {
+  border-radius: 90px;
+  background-color: white;
+  //   transform: scale(0.8);
+}
+.country_name {
+  text-align: center;
+}
+
+#table {
+  border-collapse: collapse;
+  max-height: 150px;
+  max-width: 450px;
+  display: inline-block;
+  thead {
+    width: 100%;
+    display: inline-block;
+    tr {
+      width: 100%;
+      display: flex;
+      gap: 192px;
+    }
+  }
+  tbody {
+    max-height: 150px;
+    width: 100%;
+    display: inline-block;
+    overflow-y: scroll;
+  }
+}

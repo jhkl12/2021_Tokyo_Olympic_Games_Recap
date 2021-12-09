@@ -1,4 +1,8 @@
+/* eslint-disable no-new */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable prefer-destructuring */
 import Data from "./data";
+
 const d3 = require("d3");
 const topojson = require("topojson-client");
 
@@ -11,7 +15,7 @@ class Map {
       .append("div")
       .attr("id", "tooltip")
       .style("text-align", "left")
-      .style("padding", 16 + "px")
+      .style("padding", `${16}px`)
       .style("background-color", "lightsalmon")
       .style("border", "1px solid black")
       .style("width", "auto")
@@ -20,8 +24,8 @@ class Map {
       .style("position", "absolute")
       .style("z-index", 3);
     // creating map
-    const width = 1100;
-    const height = 700;
+    const width = 800;
+    const height = 500;
 
     const svg = d3
       .select(".worldmap")
@@ -30,7 +34,7 @@ class Map {
 
     const projection = d3
       .geoMercator()
-      .scale(170)
+      .scale(120)
       .translate([width / 2, height / 1.4]);
     const path = d3.geoPath(projection);
 
@@ -47,7 +51,7 @@ class Map {
         .attr("stroke", "gray")
         .attr("fill", "blue")
         .attr("fill-opacity", (d) => {
-          const name = d.properties.name;
+          const { name } = d.properties;
           return Data.color(name);
         })
         .attr("d", path)
@@ -55,18 +59,19 @@ class Map {
           // Hover-tooltip
           const name = e.target.__data__.properties.name;
           const tooltipDiv = document.getElementById("tooltip");
-          tooltipDiv.style.top = d3.pointer(e, this)[0] + 10 + "px";
-          tooltipDiv.style.left = d3.pointer(e, this)[1] + 10 + "px";
+          tooltipDiv.style.top = `${d3.pointer(e, this)[0] + 10}px`;
+          tooltipDiv.style.left = `${d3.pointer(e, this)[1] + 10}px`;
           tooltipDiv.style.opacity = 0.92;
           Data.countryStats(name, e);
         })
         .on("mouseout", () => d3.select("#tooltip").style("opacity", 0))
         .on("mousemove", (e) => {
           d3.select("#tooltip")
-            .style("left", d3.pointer(e, this)[0] + 10 + "px")
-            .style("top", d3.pointer(e, this)[1] + 10 + "px");
+            .style("left", `${d3.pointer(e, this)[0] + 10}px`)
+            .style("top", `${d3.pointer(e, this)[1] + 10}px`);
         })
         .on("click", (e) => {
+          // eslint-disable-next-line prefer-destructuring
           const name = e.target.__data__.properties.name;
           document.getElementById("bar_graph_and_data").remove();
           new Data(name);

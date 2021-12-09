@@ -1,13 +1,21 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-shadow */
 import medalData from "./medals";
+
 const d3 = require("d3");
-const topojson = require("topojson-client");
 
 class Data {
   constructor(country) {
     // Dimensions and margins of the graph
-    const margin = { top: 10, right: 30, bottom: 90, left: 90 },
-      width = 460 - margin.left - margin.right,
-      height = 450 - margin.top - margin.bottom;
+    const margin = {
+      top: 10,
+      right: 30,
+      bottom: 90,
+      left: 90,
+    };
+    const width = 460 - margin.left - margin.right;
+    const height = 450 - margin.top - margin.bottom;
     d3.select(".country_name").text(country);
     // Append the svg object to the body of the page
     const svg = d3
@@ -19,7 +27,7 @@ class Data {
       .attr("height", height + margin.top + margin.bottom)
       .attr("id", "bar_graph")
       .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .attr("transform", `translate(${margin.left},${margin.top})`);
 
     // Parse the Data
     d3.json("data/Medals.json").then((data) => {
@@ -38,7 +46,7 @@ class Data {
           .padding(0.2);
         svg
           .append("g")
-          .attr("transform", "translate(0," + height + ")")
+          .attr("transform", `translate(0,${height})`)
           .call(d3.axisBottom(x))
           .selectAll("text")
           .attr("transform", "translate(-10,0)rotate(-45)")
@@ -50,10 +58,11 @@ class Data {
           .style("text-anchor", "middle")
           .text("Country");
         // Y axis
-        let y = d3.scaleLinear().domain([0, 60]).range([height, 0]);
+        const y = d3.scaleLinear().domain([0, 60]).range([height, 0]);
         svg.append("g").call(d3.axisLeft(y));
 
         // Bars
+        // eslint-disable-next-line consistent-return
         const color = (medal) => {
           if (medal === "Gold") return "#FEE101";
           if (medal === "Silver") return "#D7D7D7";
@@ -68,8 +77,8 @@ class Data {
           .attr("x", (d) => x(d.Medal))
           .attr("width", x.bandwidth())
           .attr("fill", (d) => color(d.Medal))
-          .attr("height", (d) => height - y(0)) 
-          .attr("y", (d) => y(0))
+          .attr("height", () => height - y(0))
+          .attr("y", () => y(0))
           .append("title")
           .text((d) => `${d.Medal}: ${d.Value}`);
 
@@ -89,9 +98,7 @@ class Data {
           .duration(800)
           .attr("y", (d) => y(d.Value))
           .attr("height", (d) => height - y(d.Value))
-          .delay((d, i) => {
-            return i * 100;
-          });
+          .delay((d, i) => i * 100);
       } else {
         // GIF if country has no medals
         Data.topTenButton();
@@ -106,7 +113,7 @@ class Data {
           .attr("allowFullScreen");
       }
     });
-    
+
     // Athletes
     d3.json("data/Athletes_by_country.json").then((data) => {
       const createTable = (data, columns) => {
@@ -115,7 +122,7 @@ class Data {
           .select("#data_section")
           .append("table")
           .attr("id", "table")
-          .style("margin-left","40px");
+          .style("margin-left", "40px");
         const thead = table.append("thead");
         const tbody = table.append("tbody");
 
@@ -127,20 +134,15 @@ class Data {
           .append("th")
           .text((column) => column);
 
-        const rows = tbody.selectAll("tr")
-        .data(data).enter().append("tr");
+        const rows = tbody.selectAll("tr").data(data).enter().append("tr");
 
-        rows.selectAll("td")
-          .data(function (row) {
-            return columns.map(function (column) {
-              return { column: column, value: row[column] };
-            });
-          })
+        rows
+          .selectAll("td")
+          .data((row) => (
+            columns.map((column) => ({ column, value: row[column] }))))
           .enter()
           .append("td")
-          .text(function (d) {
-            return d.value;
-          });
+          .text((d) => d.value);
 
         return table;
       };
@@ -149,19 +151,23 @@ class Data {
   }
 
   static countryComparison = () => {
-
     d3.select("#table").remove();
     d3.select(".country_name").remove();
     // Dimensions and margins of graph
-    const margin = { top: 10, right: 30, bottom: 40, left: 50 };
-    const width = 700 - margin.left - margin.right;
-    const height = 600 - margin.top - margin.bottom;
+    const margin = {
+      top: 10,
+      right: 10,
+      bottom: 34,
+      left: 60,
+    };
+    const width = 450 - margin.left - margin.right;
+    const height = 450 - margin.top - margin.bottom;
     d3.select("#data_section")
       .append("h2")
       .attr("class", "country_name")
-      .text("Top 10");
+      .text("Top 8");
 
-      const svg = d3
+    const svg = d3
       .select("#data_section")
       .append("div")
       .attr("id", "bar_graph_and_data")
@@ -206,7 +212,7 @@ class Data {
       const color = d3
         .scaleOrdinal()
         .domain(medals)
-        .range(["#FEE101", "#D7D7D7", "#CC6633"]); //update with more specific colors
+        .range(["#FEE101", "#D7D7D7", "#CC6633"]); // update with more specific colors
 
       // Stack per subgroup
       const stackedData = d3.stack().keys(medals)(data);
@@ -224,8 +230,8 @@ class Data {
         .data((d) => d)
         .join("rect")
         .attr("x", (d) => x(d.data.NOC))
-        .attr("y", (d) => y(-10))
-        .attr("height", (d) => y(0))
+        .attr("y", () => y(-10))
+        .attr("height", () => y(0))
         .attr("width", x.bandwidth());
 
       // Animation
@@ -235,11 +241,10 @@ class Data {
         .duration(600)
         .attr("y", (d) => y(d[1]))
         .attr("height", (d) => y(d[0]) - y(d[1]))
-        .delay((d, i) => {
-          return i * 100;
-        });
+        .delay((d, i) => i * 100);
     });
   };
+
   // Button to rerender Top 10 countries
   static topTenButton = () => {
     d3.select(".country_name")
@@ -247,13 +252,14 @@ class Data {
       .text("Compare Countries")
       .style("display", "block")
       .style("margin", "auto")
-      .on("click", (e) => {
+      .on("click", () => {
         document.getElementById("bar_graph_and_data").remove();
         Data.countryComparison();
       });
   };
+
   // Country stats for hover-tooltip
-  static countryStats = (country, e) => {
+  static countryStats = (country) => {
     d3.select("#tooltip_data_container").remove();
     d3.json("data/Medals.json").then((data) => {
       if (data[country]) {
@@ -262,34 +268,36 @@ class Data {
         const silver = data[country].Silver;
         const bronze = data[country].Bronze;
         const total = gold + silver + bronze;
-        let arrTool = [
+        const arrTool = [
           `${country}`,
           `Rank: ${rank}`,
           `Gold: ${gold}`,
           `Silver: ${silver}`,
           `Bronze: ${bronze}`,
+          `Total: ${total}`,
         ];
         d3.select("#tooltip")
           .append("div")
           .attr("id", "tooltip_data_container");
-        for (let i = 0; i < arrTool.length; i++) {
+        for (let i = 0; i < arrTool.length; i += 1) {
           d3.select("#tooltip_data_container")
             .append("div")
             .style("display", "block")
             .text(arrTool[i]);
         }
       } else {
-        let arrTool = [
+        const arrTool = [
           `${country}`,
-          `Rank: N/A`,
-          `Gold: 0`,
-          `Silver: 0`,
-          `Bronze: 0`,
+          "Rank: N/A",
+          "Gold: 0",
+          "Silver: 0",
+          "Bronze: 0",
+          "Total: 0",
         ];
         d3.select("#tooltip")
           .append("div")
           .attr("id", "tooltip_data_container");
-        for (let i = 0; i < arrTool.length; i++) {
+        for (let i = 0; i < arrTool.length; i += 1) {
           d3.select("#tooltip_data_container")
             .append("div")
             .style("display", "block")
@@ -301,13 +309,12 @@ class Data {
 
   // Set Opacity
   static color = (country) => {
-    let countries = medalData;
-    let maxMedalCount = 113;
+    const countries = medalData;
+    const maxMedalCount = 113;
     if (countries[country]) {
       return countries[country].Total / maxMedalCount;
-    } else {
-      return 0;
     }
+    return 0;
   };
 }
 

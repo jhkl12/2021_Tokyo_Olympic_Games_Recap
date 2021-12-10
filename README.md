@@ -24,6 +24,13 @@ In this data visualization, users will be able to:
 https://wireframe.cc/ETwvM4
 ![image](https://user-images.githubusercontent.com/39417343/136482101-6c9b3502-7ed6-4c94-a4e4-c6a4049fa61b.png)
 
+## Implementation Timeline
+* **Friday & Weekend:** Setup project. Create classes and render general stucture.
+* **Monday:** Implement `D3.js` to create and color World map. Ensure that hover feature works.
+* **Tuesday:** Continue implementing `D3.js` to present country's athlete and event data.
+* **Wednesday:** Ensure all sections work together and put finishing touches.
+* **Thursday Morning:** Deploy to Github Pages.
+
 ## Bonus Features
 Some anticipated design updates include:
 * Country flag next to country name.
